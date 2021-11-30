@@ -1,0 +1,260 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.28168936961073,
+        "longitude": -5.362997007585995
+      },
+      "properties": {
+        "id": "",
+        "nama": "Alung Pool",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Umbul, Jl. Raja Tihang, Tj. Senang, Kec. Tj. Senang, Kota Bandar Lampung, Lampung 35136",
+        "no_telp": "+6282280134567",
+        "rating": 4.1,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.2854659199101,
+        "longitude": -5.353596888988232
+      },
+      "properties": {
+        "id": "",
+        "nama": "GOR Bulutangkis PB. Cempaka",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Gg. Cemp. III, Way Kandis, Kec. Tj. Senang, Kota Bandar Lampung, Lampung 35131",
+        "no_telp": "+62895330185182",
+        "rating": 4.5,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.29959917619759,
+        "longitude": -5.348554608721926
+      },
+      "properties": {
+        "id": "",
+        "nama": "ISC Futsal",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Airan Raya, Way Huwi, Kec. Jati Agung, Kabupaten Lampung Selatan, Lampung 35131",
+        "no_telp": "+62895613370407",
+        "rating": 4.1,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.30039311006736,
+        "longitude": -5.349409177978715
+      },
+      "properties": {
+        "id": "",
+        "nama": "Speed Futsal",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Way Huwi, Kec. Jati Agung, Kabupaten Lampung Selatan, Lampung 35131",
+        "no_telp": "+6289652300150",
+        "rating": 4.2,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.2812133929335,
+        "longitude": -5.371947324825238
+      },
+      "properties": {
+        "id": "",
+        "nama": "Star Futsal",
+        "jenis": "Sarana Olahraga",
+        "alamat": "JL. Gunung Rajabasa Raya, No. T.21, Way Halim, 35361, Perumnas Way Halim, Way Halim, Kota Bandar Lampung, Lampung 35132",
+        "no_telp": "+6282282717002",
+        "rating": 4.3,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.2847171849671,
+        "longitude": -5.374223623883983
+      },
+      "properties": {
+        "id": "",
+        "nama": "PB. Sheva Jaya",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Way Dadi, Kec. Sukarame, Kota Bandar Lampung, Lampung 35132",
+        "no_telp": "+6283802416697",
+        "rating": 4.4,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.2788504209327,
+        "longitude": -5.37747734042335
+      },
+      "properties": {
+        "id": "",
+        "nama": "Stadion Sumpah Pemuda",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Komplek PKOR, Kedaton, Way Halim, Kota Bandar Lampung, Lampung 35132",
+        "no_telp": "-",
+        "rating": 4.4,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.27901831010534,
+        "longitude": -5.380130599851113
+      },
+      "properties": {
+        "id": "",
+        "nama": "Lapangan Softball PKOR Lampung",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Cengkeh Tengah III No.185, Perumnas Way Halim, Way Halim, Kota Bandar Lampung, Lampung 35132",
+        "no_telp": "-",
+        "rating": 5.0,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.26852065809531,
+        "longitude": -5.424012327827245
+      },
+      "properties": {
+        "id": "",
+        "nama": "Stadion Pahoman",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Ir. H. Juanda, Pahoman, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35228",
+        "no_telp": "+62721267637",
+        "rating": 4.5,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.25895615752343,
+        "longitude": -5.399419390777604
+      },
+      "properties": {
+        "id": "",
+        "nama": "Futsal Jangkung",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Dr. Sutomo, Penengahan, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35126",
+        "no_telp": "-",
+        "rating": 4.5,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.26377797317458,
+        "longitude": -5.404608990286993
+      },
+      "properties": {
+        "id": "",
+        "nama": "Lapangan Bola Kp. Sawah Brebes",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Sugriwo No.35, Sawah Brebes, Kec. Tj. Karang Tim., Kota Bandar Lampung, Lampung 35124",
+        "no_telp": "-",
+        "rating": 4.5,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.2077241931712,
+        "longitude": -5.399478821754892
+      },
+      "properties": {
+        "id": "",
+        "nama": "Lapangan Kalpataru",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Beringin Raya, Kec. Kemiling, Kota Bandar Lampung, Lampung 35155",
+        "no_telp": "-",
+        "rating": 4.4,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.26625218103557,
+        "longitude": -5.425701341358925
+      },
+      "properties": {
+        "id": "",
+        "nama": "Lapangan Basket Dino",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Nusa Indah No.44, Rw. Laut, Engal, Kota Bandar Lampung, Lampung 35213",
+        "no_telp": "-",
+        "rating": 4.6,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.26856601263506,
+        "longitude": -5.426406885014613
+      },
+      "properties": {
+        "id": "",
+        "nama": "Kolam Renang Pahoman",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. KH. Ahmad Dahlan, Pahoman, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35228",
+        "no_telp": "-",
+        "rating": 4.2,
+        "source": "Google Maps"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": 105.22946554291012,
+        "longitude": -5.403100937289046
+      },
+      "properties": {
+        "id": "",
+        "nama": "Ifa Futsal",
+        "jenis": "Sarana Olahraga",
+        "alamat": "Jl. Darussalam No.82, Susunan Baru, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35111",
+        "no_telp": "+62895610001106",
+        "rating": 4.4,
+        "source": "Google Maps"
+      }
+    }
+  ]
+}
