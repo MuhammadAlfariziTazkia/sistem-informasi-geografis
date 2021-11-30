@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "type": "file",
+    "nama": "1-dummy-image.jpeg",
+    "link": "",
+    "object_id": 1,
+    "slug": "1-dummy-image.jpeg",
+    "source": "Google Maps"
+  },
+  {
+    "id": 2,
+    "type": "link",
+    "nama": "",
+    "link": "https://dummy-link.jpeg",
+    "object_id": 1,
+    "slug": "",
+    "source": "Google Maps"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "latitude": 106.89191120000001,
+      "longitude": -6.1997558
+    },
+    "properties": {
+      "id": 1,
+      "nama": "Lapangan Saburai",
+      "jenis": "Sarana Olahraga",
+      "alamat": "Jalan Saburai",
+      "no_telp": "08123456",
+      "rating": 3.1,
+      "source": "Google Maps"
+    }
+  }
+]
