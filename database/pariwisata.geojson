@@ -1,0 +1,258 @@
+[
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "latitude": -5.420206674524016,
+        "longitude": 105.22843176769157 
+      },
+      "properties": {
+        "id": null,
+        "nama": "Puncak Mas",
+        "jenis": "Pariwisata",
+        "alamat": "Jl. PB. Marga, Sukadana Ham, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35215",
+        "no_telp": "+6282181155115",
+        "rating": 4.3,
+        "source": "Google Maps"
+      }
+    },
+    {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": -5.404235023962042,
+          "longitude": 105.25340055462618
+        },
+        "properties": {
+          "id": null,
+          "nama": "Teropong Kota Bukit Sindy",
+          "jenis": "Pariwisata",
+          "alamat": "Jl. Tamin, Pasir Gintung, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35121",
+          "no_telp": "",
+          "rating": 4.3,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": -5.426820050995387, 
+          "longitude": 105.21818017417797
+        },
+        "properties": {
+          "id": null,
+          "nama": "Air Terjun Batu Putu",
+          "jenis": "Pariwisata",
+          "alamat": "Sukadana Ham, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35156",
+          "no_telp": "",
+          "rating": 4.0,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": -5.415450012116672, 
+          "longitude": 105.23070007784798
+        },
+        "properties": {
+          "id": null,
+          "nama": "Lembah Hijau",
+          "jenis": "Pariwisata",
+          "alamat": "Jl. Raden Imba Kusuma Ratu No.21, Sukadana Ham, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 52473",
+          "no_telp": "+6281379788807",
+          "rating": 4.2,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": -5.43599936746948, 
+          "longitude": 105.2295690931681
+        },
+        "properties": {
+          "id": null,
+          "nama": "Wira Garden",
+          "jenis": "Pariwisata",
+          "alamat": "Jl. Wan Abdurrahman, Batu Putuk, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35239",
+          "no_telp": "+6282185514123",
+          "rating": 4.4,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "latitude": ,
+          "longitude": 
+        },
+        "properties": {
+          "id": null,
+          "nama": "",
+          "jenis": "Pariwisata",
+          "alamat": "",
+          "no_telp": "",
+          "rating":,
+          "source": "Google Maps"
+        }
+      }
+  ]
+  
