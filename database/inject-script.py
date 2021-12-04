@@ -12,7 +12,7 @@ def addExtension(connection):
 def createTable(connection):
     cursor = connection.cursor()
     cursor.execute('CREATE TABLE object (id SERIAL PRIMARY KEY, nama VARCHAR, jenis VARCHAR, alamat VARCHAR, no_telp VARCHAR, rating NUMERIC, source VARCHAR, geometry GEOMETRY);')
-    cursor.execute('CREATE TABLE asset (id SERIAL PRIMARY KEY, type VARCHAR, nama VARCHAR, link VARCHAR, slug VARCHAR, object_id INT);')
+    cursor.execute('CREATE TABLE asset (id SERIAL PRIMARY KEY, type VARCHAR, nama VARCHAR, link VARCHAR, slug VARCHAR, object_id INT, source VARCHAR);')
     connection.commit()
     cursor.close()
 
@@ -50,23 +50,56 @@ def InjectObject(connection, filename):
     connection.commit()
     cursor.close()
 
+def InjectAsset(connection, filename):
+    cursor = connection.cursor()
+    with open(filename, 'r') as file:
+        json_file = json.load(file)
+        
+        for obj in json_file:
+            nama = obj["nama"]
+            data_count_query = "SELECT COUNT(*) FROM asset WHERE nama = '{}'".format(nama)
+            cursor.execute(data_count_query)
+            data_count = (cursor.fetchone()[0])
+            if data_count == 0:
+                type = obj["type"]
+                link = obj["link"]
+                object_id = obj["object_id"]
+                slug = obj["slug"]
+                source = obj["source"]
+
+                insert_query = "INSERT INTO asset (type, nama, link, slug, object_id, source) VALUES('{}', '{}', '{}', '{}', {}, '{}')".format(type, nama, link, slug, int(object_id), source)
+                cursor.execute(insert_query)
+
+                print("SUCCESS INJECTED {}".format(nama))
+            else:
+                print("FAILED INJECTED {}: is already".format(nama))
+    connection.commit()
+    cursor.close()
+
 def running():
+    print()
+    print("CONFIG DATABASE")
     DB_HOST = input("Hostname : ")
     DB_NAME = input("Database Name : ")
     DB_USER = input("Username : ")
     DB_PASS = input("Password : ")
-    
+    connection = psycopg2.connect(dbname = DB_NAME, user = DB_USER, password = DB_PASS, host = DB_HOST)
+
+    print()
+    print()
+
     print("Hello Welcome!")
     
     print("Input 1 For Add Extension Postgis")
     print("Input 2 For Create Table Object and Asset")
-    print("Input 3 For Start Injecting Data")
-    print("Input 4 For Close this Prompt")
-
+    print("Input 3 For Start Injecting Object Data")
+    print("Input 4 For Start Injecting Asset Data")
+    print("Input 99 For Close this Prompt")
+    print()
     option = input("Insert your option : ")
-    connection = psycopg2.connect(dbname = DB_NAME, user = DB_USER, password = DB_PASS, host = DB_HOST)
 
-    while option != "4":
+    while option != "99":
+        print()
         if (option == "1"):
             addExtension(connection)
         elif (option == "2"):
@@ -74,6 +107,9 @@ def running():
         elif (option == "3"):
             InjectObject(connection, 'pariwisata.geojson')
             InjectObject(connection, 'olahraga.geojson')
+        elif (option == "4"):
+            # InjectAsset(connection, 'pariwisata-asset.json')
+            InjectAsset(connection, 'olahraga-asset.json')
         else:
             print("FAILED: Invalid Option")
         option = input("Insert your option : ")
