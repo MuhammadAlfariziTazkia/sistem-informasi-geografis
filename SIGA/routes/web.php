@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/wisata', [WisataController::class, 'index']);
+Route::get('/wisata/{slug}', [WisataController::class, 'detail']);
