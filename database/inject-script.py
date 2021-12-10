@@ -57,7 +57,7 @@ def InjectAsset(connection, filename):
         
         for obj in json_file:
             nama = obj["nama"]
-            data_count_query = "SELECT COUNT(*) FROM asset WHERE nama = '{}'".format(nama)
+            data_count_query = "SELECT COUNT(*) FROM asset WHERE nama = '{}' AND nama != null".format(nama)
             cursor.execute(data_count_query)
             data_count = (cursor.fetchone()[0])
             if data_count == 0:
@@ -67,7 +67,7 @@ def InjectAsset(connection, filename):
                 slug = obj["slug"]
                 source = obj["source"]
 
-                insert_query = "INSERT INTO asset (type, nama, link, slug, object_id, source) VALUES('{}', '{}', '{}', '{}', {}, '{}')".format(type, nama, link, slug, int(object_id), source)
+                insert_query = "INSERT INTO asset (type, nama, link, slug, object_id, source) VALUES('{}', '{}', '{}', '{}', {}, '{}')".format(type, nama, link, slug, object_id, source)
                 cursor.execute(insert_query)
 
                 print("SUCCESS INJECTED {}".format(nama))
@@ -108,7 +108,7 @@ def running():
             InjectObject(connection, 'pariwisata.geojson')
             InjectObject(connection, 'olahraga.geojson')
         elif (option == "4"):
-            InjectAsset(connection, 'pariwisata-asset.json')
+            # InjectAsset(connection, 'pariwisata-asset.json')
             InjectAsset(connection, 'olahraga-asset.json')
         else:
             print("FAILED: Invalid Option")
