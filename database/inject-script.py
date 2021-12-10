@@ -11,7 +11,7 @@ def addExtension(connection):
 
 def createTable(connection):
     cursor = connection.cursor()
-    cursor.execute('CREATE TABLE object (id SERIAL PRIMARY KEY, nama VARCHAR, jenis VARCHAR, alamat VARCHAR, no_telp VARCHAR, rating NUMERIC, source VARCHAR, geometry GEOMETRY);')
+    cursor.execute('CREATE TABLE object (id SERIAL PRIMARY KEY, nama VARCHAR, jenis VARCHAR, alamat VARCHAR, no_telp VARCHAR, rating NUMERIC, source VARCHAR, latitude NUMERIC, longitude NUMERIC, geometry GEOMETRY);')
     cursor.execute('CREATE TABLE asset (id SERIAL PRIMARY KEY, type VARCHAR, nama VARCHAR, link VARCHAR, slug VARCHAR, object_id INT, source VARCHAR);')
     connection.commit()
     cursor.close()
@@ -41,7 +41,7 @@ def InjectObject(connection, filename):
                 cursor.execute(make_geom_query)
                 geometry = (cursor.fetchone()[0])
                 
-                insert_query = "INSERT INTO object (nama, jenis, alamat, no_telp, rating, source, geometry) VALUES('{}', '{}', '{}', '{}', {}, '{}', '{}')".format(nama, jenis, alamat, no_telp, float(rating), source, geometry)
+                insert_query = "INSERT INTO object (nama, jenis, alamat, no_telp, rating, source, latitude, longitude, geometry) VALUES('{}', '{}', '{}', '{}', {}, '{}', {}, {}, '{}')".format(nama, jenis, alamat, no_telp, float(rating), source, latitude, longitude, geometry)
                 cursor.execute(insert_query)
 
                 print("SUCCESS INJECTED {}".format(nama))
@@ -108,7 +108,7 @@ def running():
             InjectObject(connection, 'pariwisata.geojson')
             InjectObject(connection, 'olahraga.geojson')
         elif (option == "4"):
-            # InjectAsset(connection, 'pariwisata-asset.json')
+            InjectAsset(connection, 'pariwisata-asset.json')
             InjectAsset(connection, 'olahraga-asset.json')
         else:
             print("FAILED: Invalid Option")
