@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/wisata', [WisataController::class, 'index']);
-Route::get('/wisata/{slug}', [WisataController::class, 'detail']);
+Route::get('/wisata/{id}', [WisataController::class, 'detail']);
