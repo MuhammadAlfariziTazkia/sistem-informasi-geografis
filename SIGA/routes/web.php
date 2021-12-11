@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OlahragaController;
 use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/olahraga', [OlahragaController::class, 'index']);
+Route::get('/olahraga/{id}', [OlahragaController::class, 'detail']);
 Route::get('/wisata', [WisataController::class, 'index']);
 Route::get('/wisata/{id}', [WisataController::class, 'detail']);
