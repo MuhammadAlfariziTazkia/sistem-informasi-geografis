@@ -57,12 +57,19 @@ def InjectAsset(connection, filename):
         
         for obj in json_file:
             nama = obj["nama"]
-            data_count_query = "SELECT COUNT(*) FROM asset WHERE nama = '{}' AND nama != null".format(nama)
+            link = obj["link"]
+            type = obj["type"]
+
+            if type == 'link':
+                data_count_query = "SELECT COUNT(*) FROM asset WHERE link = '{}' AND link != ''".format(link)
+            else: 
+                data_count_query = "SELECT COUNT(*) FROM asset WHERE nama = '{}' AND nama != ''".format(nama)
+
             cursor.execute(data_count_query)
             data_count = (cursor.fetchone()[0])
+
             if data_count == 0:
                 type = obj["type"]
-                link = obj["link"]
                 object_id = obj["object_id"]
                 slug = obj["slug"]
                 source = obj["source"]
