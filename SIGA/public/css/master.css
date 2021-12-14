@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    --bg-light:#fafafa;
+    --bg-dark: #2A2A2A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+    font-weight: 400;
+}
+
+body{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--bg-light);
+}
+
+.nav-container {
+    /* Content is centered horizontally */
+    align-items: center;
+    display: flex;
+
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item--right {
+    /* Sticks to the right */
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+}
+
+.nav__item--right > a {
+    margin-left: 50px;
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 265px;
+    height: 90px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+}
+
+.logo > img{
+    width: 240px;
+    height: 40px;
+}
+
+.banner {
+    margin-top: 30px;
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    display: grid;
+    place-items: initial;
+    place-content: center;
+}
+
+.banner > div {
+    width: 60%;
+    word-wrap: break-word;
+}
+
+.banner__header {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.topic {
+    color: var(--bg-dark);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    align-items: flex-end;
+    width: 47%;
+    padding: 20px;
+    height: 200px;
+    border-radius: 10px;
+    color: var(--bg-light);
+    font-size: 12px;
+}
+
+.menu__text {
+    text-decoration: none;
+    color: var(--bg-light);
+}
+
+.menu__header {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.why__img, .why__text {
+    width: 47%;
+    margin-top: 150px;
+    color: var(--bg-dark);
+    font-size: 20px;
+}
+
+.why__img {
+    border-radius: 10px;
+    height: 450px;
+}
+
+.why__header {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
