@@ -19,10 +19,19 @@
 @endsection
 
 @section('content')
-    <input type="text" class="input__search"
-        style="background: url({{ asset('icon/search.svg') }}) no-repeat center center / 30px 30px; background-position:20px; background-color: white; "
-        class="input__search" placeholder="Cari Tempat Olahraga">
-    
+    <div class="d-flex justify-content-between search">
+        <input list="search" class="search__input"
+            style="background: url({{ asset('icon/search.svg') }}) no-repeat center center / 30px 30px; background-position:20px; background-color: white; "
+             placeholder="Cari Tempat Olahraga">
+        <datalist id="search">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <button class="search__button">Cari</button>
+    </div>
     <div class="d-flex justify-content-between">
         <div class="map"></div>
         <div class="recommend">

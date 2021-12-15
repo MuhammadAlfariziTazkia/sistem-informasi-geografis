@@ -154,15 +154,29 @@ body {
     margin-bottom: 20px;
 }
 
-.input__search {
+.search {
     position: relative;
     top: -65px;
     height: 70px;
     width: 60%;
+}
+
+.search__input {
+    flex: 1;
     font-size: 20px;
     padding-left: 80px;
     border-radius: 10px;
     border: 1px solid #d1d1d1;
+}
+
+.search__button {
+    color: var(--bg-light);
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    background: var(--bg-dark);
+    padding: 20px;
+    margin-left: 20px;
 }
 
 .map {
