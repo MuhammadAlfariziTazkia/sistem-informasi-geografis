@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\ObjectModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Torann\GeoIP\Facades\GeoIP;
 
 class WisataController extends Controller
 {
     //
     public function index(Request $request){
+        $currentLocation = GeoIP::getLocation();
         $search_key = $request->query('search');
         $sortby_key = $request->query('sortby');
 
