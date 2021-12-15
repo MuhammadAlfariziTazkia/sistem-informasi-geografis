@@ -1,4 +1,8 @@
-# INSTALLATION TORANN
+# INSTALLATION TORANN FOR WEBSITE DEVELOPMENT
+
+## Move Directory
+cd SIGA
+
 ## Composer
 From the command line run:
 
