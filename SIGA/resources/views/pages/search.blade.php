@@ -22,7 +22,7 @@
     <div class="d-flex justify-content-between search">
         <input list="search" class="search__input"
             style="background: url({{ asset('icon/search.svg') }}) no-repeat center center / 30px 30px; background-position:20px; background-color: white; "
-             placeholder="Cari Tempat Olahraga">
+            placeholder="Cari Tempat Olahraga">
         <datalist id="search">
             <option value="Edge">
             <option value="Firefox">
@@ -33,7 +33,7 @@
         <button class="search__button">Cari</button>
     </div>
     <div class="d-flex justify-content-between">
-        <div class="map"></div>
+        <div class="map" id="map"></div>
         <div class="recommend">
             <div class="dropdown">
                 <button class="dropbtn">Urut Berdasarkan</button>
@@ -42,7 +42,8 @@
                     <a href="#">Jarak terdekat</a>
                 </div>
             </div>
-            <div class="d-flex mb-5">
+            {{-- card rekomendasi --}}
+            <div class="d-flex mb-5 card__recommend" onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
                 <div class="recommend__img"
                     style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
                 </div>
@@ -57,8 +58,14 @@
                         <div class="recommend__star nofill">☆</div>
                         <div class="recommend__star nofill">☆</div>
                     </div>
-                    <a class="recommend__link" href="">Lihat Selengkapnya</a>
+                    <a class="recommend__link" >Lihat Selengkapnya</a>
                 </div>
             </div>
+            {{-- end card rekomendasi --}}
         </div>
-    @endsection
+    </div>
+@endsection
+
+@section('footer')
+    <script src="{{ asset('js/map.js') }}"></script>
+@endsection
