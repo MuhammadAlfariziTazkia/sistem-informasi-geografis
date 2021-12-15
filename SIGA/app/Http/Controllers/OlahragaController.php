@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Torann\GeoIP\Facades\GeoIP;
 
 class OlahragaController extends Controller
 {
@@ -11,190 +12,84 @@ class OlahragaController extends Controller
         $search_key = $request->query('search');
         $sortby_key = $request->query('sortby');
 
+        $data['object_type'] = 'sarana olahraga';
+        $currentLocation = GeoIP::getLocation('111.94.186.184');
+        $data['myLatitude'] = $currentLocation['lat'];
+        $data['myLongitude'] = $currentLocation['lon'];
+        // $ip = $_SERVER['REMOTE_ADDR'];
+        // $currentLocation = GeoIP::getLocation($ip);
+
         if($search_key && $sortby_key){
             if($sortby_key == 'rating'){
-                $data = DB::table('object as o')
-                ->where('o.jenis', 'Sarana Olahraga')
-                ->where('o.nama', 'ilike', '%'.$search_key.'%')
-                ->join('asset as a', 'a.object_id', '=', 'o.id')
-                ->select([
-                    'o.id as id',
-                    'o.nama as nama',
-                    'o.jenis as jenis',
-                    'o.alamat as alamat',
-                    'o.no_telp as no_telp',
-                    'o.rating as rating',
-                    'o.source as source',
-                    'o.latitude as latitude',
-                    'o.longitude as longitude',
-                    'o.geometry as geometry',
-                    'a.link as asset_link',
-                    'a.source as asset_source'
-                ])
+                $data['data'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
+                ->where('nama', 'ilike', '%'.$search_key.'%')
                 ->orderBy('rating', 'desc')
                 ->take(6)
                 ->get();
             } else{
-                $data = DB::table('object as o')
-                ->where('o.jenis', 'Sarana Olahraga')
+                $data['data'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
                 ->where(function($query) use ($search_key){
-                    $query->where('o.nama', 'ilike', '%'.$search_key.'%')
-                    ->orWhere('o.alamat', 'ilike', '%'.$search_key.'%');
+                    $query->where('nama', 'ilike', '%'.$search_key.'%')
+                    ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
                 })
-                ->join('asset as a', 'a.object_id', '=', 'o.id')
-                ->select([
-                    'o.id as id',
-                    'o.nama as nama',
-                    'o.jenis as jenis',
-                    'o.alamat as alamat',
-                    'o.no_telp as no_telp',
-                    'o.rating as rating',
-                    'o.source as source',
-                    'o.latitude as latitude',
-                    'o.longitude as longitude',
-                    'o.geometry as geometry',
-                    'a.link as asset_link',
-                    'a.source as asset_source'
-                ])
                 ->orderBy('rating', 'desc') // Nanti diganti order by jarak
                 ->take(6)
                 ->get();
             }
         } else if($search_key){
-            $data = DB::table('object as o')
-            ->where('o.jenis', 'Sarana Olahraga')
+            $data['data'] = DB::table('object')
+            ->where('jenis', 'Sarana Olahraga')
             ->where(function($query) use ($search_key){
-                $query->where('o.nama', 'ilike', '%'.$search_key.'%')
-                ->orWhere('o.alamat', 'ilike', '%'.$search_key.'%');
+                $query->where('nama', 'ilike', '%'.$search_key.'%')
+                ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
             })
-            ->join('asset as a', 'a.object_id', '=', 'o.id')
-            ->select([
-                'o.id as id',
-                'o.nama as nama',
-                'o.jenis as jenis',
-                'o.alamat as alamat',
-                'o.no_telp as no_telp',
-                'o.rating as rating',
-                'o.source as source',
-                'o.latitude as latitude',
-                'o.longitude as longitude',
-                'o.geometry as geometry',
-                'a.link as asset_link',
-                'a.source as asset_source'
-            ])
             ->orderBy('rating', 'desc') // Nanti diganti order by jarak
             ->take(6)
             ->get();
 
         } else if($sortby_key){
             if($sortby_key == 'rating'){
-                $data = DB::table('object as o')
-                ->where('o.jenis', 'Sarana Olahraga')
-                ->join('asset as a', 'a.object_id', '=', 'o.id')
-                ->select([
-                    'o.id as id',
-                    'o.nama as nama',
-                    'o.jenis as jenis',
-                    'o.alamat as alamat',
-                    'o.no_telp as no_telp',
-                    'o.rating as rating',
-                    'o.source as source',
-                    'o.latitude as latitude',
-                    'o.longitude as longitude',
-                    'o.geometry as geometry',
-                    'a.link as asset_link',
-                    'a.source as asset_source'
-                ])
+                $data['data'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc')
                 ->take(6)
                 ->get();
             } else{
-                $data = DB::table('object as o')
-                ->where('o.jenis', 'Sarana Olahraga')
-                ->join('asset as a', 'a.object_id', '=', 'o.id')
-                ->select([
-                    'o.id as id',
-                    'o.nama as nama',
-                    'o.jenis as jenis',
-                    'o.alamat as alamat',
-                    'o.no_telp as no_telp',
-                    'o.rating as rating',
-                    'o.source as source',
-                    'o.latitude as latitude',
-                    'o.longitude as longitude',
-                    'o.geometry as geometry',
-                    'a.link as asset_link',
-                    'a.source as asset_source'
-                ])
+                $data['data'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc') // Nanti diganti order by jarak
                 ->take(6)
                 ->get();
             }
         } else{
-            $data = DB::table('object as o')
-            ->where('o.jenis', 'Sarana Olahraga')
-            ->join('asset as a', 'a.object_id', '=', 'o.id')
-            ->select([
-                'o.id as id',
-                'o.nama as nama',
-                'o.jenis as jenis',
-                'o.alamat as alamat',
-                'o.no_telp as no_telp',
-                'o.rating as rating',
-                'o.source as source',
-                'o.latitude as latitude',
-                'o.longitude as longitude',
-                'o.geometry as geometry',
-                'a.link as asset_link',
-                'a.source as asset_source'
-            ])
+            $data['data'] = DB::table('object')
+            ->where('jenis', 'Sarana Olahraga')
             ->orderBy('rating', 'desc') // Nanti diganti order by jarak
             ->take(6)
             ->get();
         }
-        return $data;
+        return view("pages.search", $data);
     }
 
     public function detail($id){
-        $data['detail'] = DB::table('object as o')
-        ->where('o.jenis', 'Sarana Olahraga')
-        ->where('o.id', $id)
-        ->join('asset as a', 'a.object_id', '=', 'o.id')
-        ->select([
-            'o.id as id',
-            'o.nama as nama',
-            'o.jenis as jenis',
-            'o.alamat as alamat',
-            'o.no_telp as no_telp',
-            'o.rating as rating',
-            'o.source as source',
-            'o.latitude as latitude',
-            'o.longitude as longitude',
-            'o.geometry as geometry',
-            'a.link as asset_link',
-            'a.source as asset_source'
-        ])->first();
-        
-        $data['recommend'] = DB::table('object as o')
-        ->where('o.jenis', 'Sarana Olahraga')
-        ->join('asset as a', 'a.object_id', '=', 'o.id')
-        ->select([
-            'o.id as id',
-            'o.nama as nama',
-            'o.jenis as jenis',
-            'o.alamat as alamat',
-            'o.no_telp as no_telp',
-            'o.rating as rating',
-            'o.source as source',
-            'o.latitude as latitude',
-            'o.longitude as longitude',
-            'o.geometry as geometry',
-            'a.link as asset_link',
-            'a.source as asset_source'
-        ])
+        $data['object_type'] = 'sarana olahraga';
+        $currentLocation = GeoIP::getLocation('111.94.186.184');
+        $data['myLatitude'] = $currentLocation['lat'];
+        $data['myLongitude'] = $currentLocation['lon'];
+
+        $data['data'] = DB::table('object')
+        ->where('jenis', 'Sarana Olahraga')
+        ->where('id', $id)
+        ->first();
+
+        $data['recommend'] = DB::table('object')
+        ->where('jenis', 'Sarana Olahraga')
         ->orderBy('rating', 'desc')
         ->take(6)
         ->get();
-        return $data;
+        
+        return view("pages.detail", $data);
     }
 }
