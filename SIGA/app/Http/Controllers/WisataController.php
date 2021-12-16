@@ -48,13 +48,14 @@ class WisataController extends Controller
             // STATEMENT
         }
 
-        return compact('object_type', 'myLatitude', 'myLongitude', 'data');
+        return view("pages.search", compact('object_type', 'myLatitude', 'myLongitude', 'data'));
     }
 
     public function detail($id){
+        $object_type = 'wisata';
         $data = ObjectModel::find($id);
         $assets = DB::select(DB::raw("SELECT * FROM asset WHERE object_id = '".$id."'"));
         $rekomendasi = DB::select(DB::raw("SELECT * FROM object ORDER BY rating DESC"));
-        return compact('wisata', 'assets', 'rekomendasi');
+        return compact('object_type', 'data', 'assets', 'rekomendasi');
     }
 }
