@@ -25,7 +25,6 @@ class OlahragaController extends Controller
                 ->where('jenis', 'Sarana Olahraga')
                 ->where('nama', 'ilike', '%'.$search_key.'%')
                 ->orderBy('rating', 'desc')
-                ->take(6)
                 ->get();
             } else{
                 $data['data'] = DB::table('object')
@@ -35,7 +34,6 @@ class OlahragaController extends Controller
                     ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
                 })
                 ->orderBy('rating', 'desc') // Nanti diganti order by jarak
-                ->take(6)
                 ->get();
             }
         } else if($search_key){
@@ -46,7 +44,6 @@ class OlahragaController extends Controller
                 ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
             })
             ->orderBy('rating', 'desc') // Nanti diganti order by jarak
-            ->take(6)
             ->get();
 
         } else if($sortby_key){
@@ -54,22 +51,20 @@ class OlahragaController extends Controller
                 $data['data'] = DB::table('object')
                 ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc')
-                ->take(6)
                 ->get();
             } else{
                 $data['data'] = DB::table('object')
                 ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc') // Nanti diganti order by jarak
-                ->take(6)
                 ->get();
             }
         } else{
             $data['data'] = DB::table('object')
             ->where('jenis', 'Sarana Olahraga')
             ->orderBy('rating', 'desc') // Nanti diganti order by jarak
-            ->take(6)
             ->get();
         }
+        var_dump($data);die;
         return view("pages.search", $data);
     }
 
@@ -90,6 +85,7 @@ class OlahragaController extends Controller
         ->take(6)
         ->get();
         
+        var_dump($data);die;
         return view("pages.detail", $data);
     }
 }
