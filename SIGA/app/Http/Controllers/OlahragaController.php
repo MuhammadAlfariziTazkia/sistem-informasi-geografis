@@ -84,7 +84,7 @@ class OlahragaController extends Controller
         ->where('id', $id)
         ->first();
 
-        $data['recommend'] = DB::table('object')
+        $data['rekomendasi'] = DB::table('object')
         ->where('jenis', 'Sarana Olahraga')
         ->orderBy('rating', 'desc')
         ->take(6)
