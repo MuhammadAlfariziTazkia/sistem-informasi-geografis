@@ -24,7 +24,11 @@ class WisataController extends Controller
         $search_key = $request->query('search');
         $sortby_key = $request->query('sortby');
         
-        $sortby = $sortby_key;
+        if(strlen($sortby_key) == 0){
+            $sortby = 'distance';
+        }else{
+            $sortby = $sortby_key;
+        }
 
         // KALAU ADA SEARCH KEY QUERY DAN ADA SORTBY QUERY
         if ($search_key && $sortby_key){
