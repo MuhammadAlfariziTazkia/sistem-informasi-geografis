@@ -26,6 +26,7 @@ class OlahragaController extends Controller
                 ->where('nama', 'ilike', '%'.$search_key.'%')
                 ->orderBy('rating', 'desc')
                 ->get();
+                $data['sortby'] = 'rating';
             } else{
                 $data['data'] = DB::table('object')
                 ->where('jenis', 'Sarana Olahraga')
@@ -33,8 +34,9 @@ class OlahragaController extends Controller
                     $query->where('nama', 'ilike', '%'.$search_key.'%')
                     ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
                 })
-                ->orderBy('rating', 'desc') // Nanti diganti order by jarak
+                // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
                 ->get();
+                $data['sortby'] = 'distance';
             }
         } else if($search_key){
             $data['data'] = DB::table('object')
@@ -43,8 +45,9 @@ class OlahragaController extends Controller
                 $query->where('nama', 'ilike', '%'.$search_key.'%')
                 ->orWhere('alamat', 'ilike', '%'.$search_key.'%');
             })
-            ->orderBy('rating', 'desc') // Nanti diganti order by jarak
+            // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
             ->get();
+            $data['sortby'] = 'distance';
 
         } else if($sortby_key){
             if($sortby_key == 'rating'){
@@ -52,19 +55,21 @@ class OlahragaController extends Controller
                 ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc')
                 ->get();
+                $data['sortby'] = 'rating';
             } else{
                 $data['data'] = DB::table('object')
                 ->where('jenis', 'Sarana Olahraga')
-                ->orderBy('rating', 'desc') // Nanti diganti order by jarak
+                // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
                 ->get();
+                $data['sortby'] = 'distance';
             }
         } else{
             $data['data'] = DB::table('object')
             ->where('jenis', 'Sarana Olahraga')
-            ->orderBy('rating', 'desc') // Nanti diganti order by jarak
+            // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
             ->get();
+            $data['sortby'] = 'distance';
         }
-        var_dump($data);die;
         return view("pages.search", $data);
     }
 
@@ -85,7 +90,6 @@ class OlahragaController extends Controller
         ->take(6)
         ->get();
         
-        var_dump($data);die;
         return view("pages.detail", $data);
     }
 }
