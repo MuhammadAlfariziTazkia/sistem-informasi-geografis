@@ -67,7 +67,6 @@ class WisataController extends Controller
     public function detail($id){
         $object_type = 'wisata';
         $data = ObjectModel::find($id);
-        $assets = DB::select(DB::raw("SELECT * FROM asset WHERE object_id = '".$id."'"));
         $rekomendasi = DB::select(DB::raw("SELECT * FROM object WHERE jenis = 'Pariwisata' ORDER BY rating DESC LIMIT 6"));
         return view('pages.detail',compact('object_type', 'data', 'rekomendasi')) ;
     }
