@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
 
-Route::get('/olahraga', [OlahragaController::class, 'index']);
-Route::get('/olahraga/{id}', [OlahragaController::class, 'detail']);
-Route::get('/wisata', [WisataController::class, 'index']);
-Route::get('/wisata/{id}', [WisataController::class, 'detail']);
+Route::get('/olahraga', [OlahragaController::class, 'index'])->name('olahraga.index');
+Route::get('/olahraga/{id}', [OlahragaController::class, 'detail'])->name('olahraga.show');
+Route::get('/wisata', [WisataController::class, 'index'])->name('wisata.index');
+Route::get('/wisata/{id}', [WisataController::class, 'detail'])->name('wisata.show');
