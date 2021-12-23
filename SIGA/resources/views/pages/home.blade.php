@@ -21,7 +21,7 @@
     <section class="menu-section">
         <div class="menu"
             style="background: linear-gradient(180deg,transparent 16%, hsl(0,0%,87.5%,0.3) 46%, hsl(0,0%,21%) 100%), url({{ asset('img/olahraga.png') }}) no-repeat center center / cover;">
-            <a href="" class="menu__text">
+            <a href="{{route('olahraga.index')}}" class="menu__text">
                 <p class="menu__header">Cari Lokasi Olahraga</p>
                 <p>Temukan tempat sehat kamu sekarang</p>
             </a>
@@ -29,7 +29,7 @@
 
         <div class="menu"
             style="background: linear-gradient(180deg,transparent 16%, hsl(0,0%,87.5%,0.3) 46%, hsl(0,0%,21%) 100%), url({{ asset('img/wisata.png') }}) no-repeat center center / cover;">
-            <a href="" class="menu__text">
+            <a href="{{route('wisata.index')}}" class="menu__text">
                 <p class="menu__header">Cari Lokasi Wisata</p>
                 <p>Mulai cari lokasi untuk liburan kamu</p>
             </a>
