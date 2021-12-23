@@ -13,6 +13,8 @@ class WisataController extends Controller
     //
     public function index(Request $request){
         $object_type = 'wisata';
+        $sortby_key = $request['sortby'];
+        $search_key = $request['search'];
         
         $ip = $_SERVER['REMOTE_ADDR'];
         // echo $ip;
@@ -23,6 +25,10 @@ class WisataController extends Controller
 
         $search_key = $request->query('search');
         $sortby_key = $request->query('sortby');
+
+        if($search_key == 'yes') {
+            $search_key = $request['search'];
+        }
         
         if(strlen($sortby_key) == 0){
             $sortby = 'distance';
@@ -55,7 +61,7 @@ class WisataController extends Controller
             // STATEMENT
         }
 
-        return compact('object_type', 'myLatitude', 'myLongitude', 'sortby', 'data');
+        return view('pages.search',compact('object_type', 'myLatitude', 'myLongitude', 'sortby', 'data', 'search_key'));
     }
 
     public function detail($id){
@@ -63,6 +69,6 @@ class WisataController extends Controller
         $data = ObjectModel::find($id);
         $assets = DB::select(DB::raw("SELECT * FROM asset WHERE object_id = '".$id."'"));
         $rekomendasi = DB::select(DB::raw("SELECT * FROM object ORDER BY rating DESC LIMIT 6"));
-        return compact('object_type', 'data', 'assets', 'rekomendasi');
+        return view('pages.detail',compact('object_type', 'data', 'assets', 'rekomendasi')) ;
     }
 }

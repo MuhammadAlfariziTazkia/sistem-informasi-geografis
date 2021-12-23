@@ -9,9 +9,13 @@ use Torann\GeoIP\Facades\GeoIP;
 class OlahragaController extends Controller
 {
     public function index(Request $request){
-        $search_key = $request->query('search');
-        $sortby_key = $request->query('sortby');
-
+        // $search_key = $request->query('search');
+        // $sortby_key = $request->query('sortby');
+        
+        $sortby_key = $request['sortby'];
+        $search_key = $request['search'];
+        
+        $data['search_key'] = $search_key;
         $data['object_type'] = 'sarana olahraga';
         $currentLocation = GeoIP::getLocation('111.94.186.184');
         $data['myLatitude'] = $currentLocation['lat'];
