@@ -84,7 +84,6 @@ class OlahragaController extends Controller
             ->get();
             $data['sortby'] = 'distance';
         }
-        dd($data);
         return view("pages.search", $data);
     }
 
