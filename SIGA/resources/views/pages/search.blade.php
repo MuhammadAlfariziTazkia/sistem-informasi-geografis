@@ -2,6 +2,12 @@
 
 @section('title', $object_type)
 
+@section('head')
+<script>
+    var s = @json($data);
+</script>
+@endsection
+
 @section('banner')
     <div class="banner-full"
         style="background: linear-gradient(to bottom, hsla(0, 0%, 30.2%, 0.7), hsla(0, 0%, 30.2%, 0.7)), url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
@@ -65,7 +71,7 @@
                     </div>
 
                     <div class="recommend__info">
-                        <p class="recommend__header">{{ $item->asset_name }}</p>
+                        <p class="recommend__header">{{ $item->nama }}</p>
                         <p>Jarak - Km</p>
                         <div class="recommend__rating">
                             {{ $item->rating }}
@@ -95,14 +101,11 @@
 @endsection
 
 @section('footer')
-    <script>
-        function cek (sortValue){
-        var sort = document.getElementById('inputSort');
-        newSort = sortValue;
-        sort.setAttribute('value',newSort);
-        console.log(sort.value)
-        document.getElementById('searchForm').submit();
-    }
-</script>
     <script src="{{ asset('js/map.js') }}"></script>
+    <script>
+        // console.log(cekJarak(s[0].latitude,s[0].longitude))
+        // s.forEach(data => {
+        //     console.log(cekJarak (data.latitude,data.longitude)) 
+        // });
+    </script>
 @endsection

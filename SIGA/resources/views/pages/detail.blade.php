@@ -33,114 +33,38 @@
         Rekomendasi Tempat Olahraga Lainnya
     </p>
     <div class="recommend detail">
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
+        @foreach ($rekomendasi as $item)
+        <div class="d-flex mb-5 p-1 card__recommend "onmousemove="popMarker({{ $item->latitude }},{{ $item->longitude }},'{{ $item->asset_name }}')"
+            onmouseout="setTimeout( clearMarker(),3000)">
             <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
+                style="background: url({{ $item->asset_link }}) no-repeat center center / cover;">
             </div>
 
             <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
+                <p class="recommend__header">{{ $item->nama }}</p>
+                <p>Jarak - Km</p>
                 <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
-                </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
-            </div>
-        </div>
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
-            <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
-            </div>
+                    {{ $item->rating }}
 
-            <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
-                <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
+                    @for ($i = 1; $i <= $item->rating; $i++)
+                        @if ($i <= $item->rating)
+                            <div class="recommend__star">★</div>
+                        @else
+                            <div class="recommend__star nofill">☆</div>
+                        @endif
+                    @endfor
                 </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
-            </div>
-        </div>
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
-            <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
-            </div>
 
-            <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
-                <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
-                </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
+                @if ($object_type == 'sarana olahraga')
+                    <a class="recommend__link" href="{{ route('olahraga.show', $item->id) }}">Lihat
+                        Selengkapnya</a>
+                @else
+                    <a class="recommend__link" href="{{ route('wisata.show', $item->id) }}">Lihat
+                        Selengkapnya</a>
+                @endif
             </div>
         </div>
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
-            <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
-            </div>
-
-            <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
-                <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
-                </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
-            </div>
-        </div>
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
-            <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
-            </div>
-
-            <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
-                <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
-                </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
-            </div>
-        </div>
-        <div class="d-flex mb-5 p-1 mr-5 card__recommend " onmousemove="popMarker(-5.359013097988684,105.3162449826625,'Nice')" onmouseout="clearMarker()">
-            <div class="recommend__img"
-                style="background: url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
-            </div>
-
-            <div class="recommend__info">
-                <p class="recommend__header">Meditation Lampung</p>
-                <p>Jarak 3.3 Km</p>
-                <div class="recommend__rating">
-                    <div class="recommend__star">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star ">★</div>
-                    <div class="recommend__star nofill">☆</div>
-                    <div class="recommend__star nofill">☆</div>
-                </div>
-                <a class="recommend__link" >Lihat Selengkapnya</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection
 
