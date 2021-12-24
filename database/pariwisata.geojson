@@ -98,5 +98,25 @@
       "asset_name": "Wira Garden Image",
       "asset_source": "Google Maps"
     }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "latitude": -5.421517690088855,
+      "longitude": 105.25996009688708
+    },
+    "properties": {
+      "id": null,
+      "nama": "Lampung Elephant Park",
+      "jenis": "Pariwisata",
+      "alamat": "Jl. Jend. Sudirman No.17, Enggal, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35213",
+      "no_telp": "",
+      "rating": 4.5,
+      "source": "Google Maps",
+      "asset_link": "https://lh5.googleusercontent.com/p/AF1QipMK_pUjIU1qeinJC7TIvxT6eQ0y9wqevrzEF4UR=w408-h306-k-no",
+      "asset_name": "Lampung Elephan Park Image",
+      "asset_source": "Google Maps"
+    }
   }
 ]

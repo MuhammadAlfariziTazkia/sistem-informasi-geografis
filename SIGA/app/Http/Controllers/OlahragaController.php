@@ -17,7 +17,7 @@ class OlahragaController extends Controller
         
         $data['search_key'] = $search_key;
         $data['object_type'] = 'sarana olahraga';
-        $currentLocation = GeoIP::getLocation('111.94.186.184');
+        $currentLocation = GeoIP::getLocation('110.137.38.71');
         $data['myLatitude'] = $currentLocation['lat'];
         $data['myLongitude'] = $currentLocation['lon'];
         // $ip = $_SERVER['REMOTE_ADDR'];
@@ -28,6 +28,10 @@ class OlahragaController extends Controller
                 $data['data'] = DB::table('object')
                 ->where('jenis', 'Sarana Olahraga')
                 ->where('nama', 'ilike', '%'.$search_key.'%')
+                ->orderBy('rating', 'desc')
+                ->get();
+                $data['others'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
                 ->orderBy('rating', 'desc')
                 ->get();
                 $data['sortby'] = 'rating';
@@ -41,6 +45,9 @@ class OlahragaController extends Controller
                 // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
                 ->get();
                 $data['sortby'] = 'distance';
+                $data['others'] = DB::table('object')
+                ->where('jenis', 'Sarana Olahraga')
+                ->get();
             }
         } else if($search_key){
             $data['data'] = DB::table('object')
@@ -52,6 +59,9 @@ class OlahragaController extends Controller
             // ->orderBy('rating', 'desc') // Nanti diganti order by jarak
             ->get();
             $data['sortby'] = 'distance';
+            $data['others'] = DB::table('object')
+            ->where('jenis', 'Sarana Olahraga')
+            ->get();
 
         } else if($sortby_key){
             if($sortby_key == 'rating'){
