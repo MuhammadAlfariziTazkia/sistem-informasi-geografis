@@ -220,6 +220,10 @@ body {
     justify-content: space-between;
 }
 
+.card__recommend {
+    width: 400px;
+}
+
 .card__recommend:hover {
     transition: 0.1s;
 }
