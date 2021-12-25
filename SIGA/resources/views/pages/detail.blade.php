@@ -2,6 +2,13 @@
 
 @section('title', 'Detail')
 
+@section('head')
+<script>
+    var detailData = @json($data);
+    console.log(detailData)
+</script>
+@endsection
+
 @section('banner')
     <div class="banner-full"
         style="background: linear-gradient(to bottom, hsla(0, 0%, 30.2%, 0.7), hsla(0, 0%, 30.2%, 0.7)), url({{ asset('img/banner.png') }}) no-repeat center center / cover;">
@@ -30,7 +37,11 @@
 @section('content')
     <div class="map__detail" id="map"></div>
     <p class="recommend__text">
+        @if ($object_type == 'sarana olahraga')
         Rekomendasi Tempat Olahraga Lainnya
+        @else
+        Rekomendasi Tempat Wisata Lainnya
+        @endif
     </p>
     <div class="recommend detail">
         @foreach ($rekomendasi as $item)
@@ -42,7 +53,6 @@
 
             <div class="recommend__info">
                 <p class="recommend__header">{{ $item->nama }}</p>
-                <p>Jarak - Km</p>
                 <div class="recommend__rating">
                     {{ $item->rating }}
 
@@ -70,4 +80,28 @@
 
 @section('footer')
     <script src="{{ asset('js/map.js') }}"></script>
+    <script>
+        L.Routing.control({
+            waypoints: [
+                L.latLng(-5.368469, 105.290952),
+                L.latLng(detailData.latitude, detailData.longitude)
+            ]
+        }).addTo(map);
+        circle.remove();
+        function cekJarak(lat,leng,x){
+            let destination = L.latLng(lat,leng)
+            let wp2 = new L.Routing.Waypoint(destination);
+            let routeUS = new L.Routing.osrmv1();
+            routeUS.route([wp1,wp2],(err,obj)=>{
+                if(!err){
+                    var jarak = obj[0].summary.totalDistance ;
+                    document.getElementById('jarak'+x).innerHTML = "Jarak " + jarak + " m";
+                }
+            })
+        }
+        
+        s.forEach(x => {
+            cekJarak(x.latitude,x.longitude,x.id)
+        });
+    </script>
 @endsection
