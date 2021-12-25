@@ -24,18 +24,7 @@ function clearMarker(){
     map.closePopup();
 }
 
-function cekJarak(lat,leng){
-    let destination = L.latLng(lat,leng)
-    let wp2 = new L.Routing.Waypoint(destination);
-    let routeUS = new L.Routing.osrmv1;
-    var hasilJarak;
-    routeUS.route([wp1,wp2],(err,obj)=>{
-        if(!err){
-            hasilJarak = obj[1].summary.totalDistance;
-        }
-    })
-    return hasilJarak;
-}
+
 
 var map = L.map('map').setView([-5.4088848, 105.2579765], 12);
 ACCESS_TOKEN = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
@@ -61,9 +50,11 @@ var circle = L.circle([-5.368469,105.290952], {
     radius: 5000
 }).addTo(permLayer);
 
+
+
 let myLocation = L.latLng(-5.368469,105.290952);
 let wp1 = new L.Routing.Waypoint(myLocation);
-// cekJarak(-5.404235023962042,105.25340055462618)
-console.log(cekJarak(-5.362997007585995 ,105.28168936961073))
+// console.log(cekJarak(-5.404235023962042,105.25340055462618));
+// cekJarak(-5.362997007585995 ,105.28168936961073);
 // addMarker(-5.359013097988684,105.3162449826625);
 // addCircle(-5.359013097988684,105.3162449826625,5000,'#71E99F','#6BAF85');
