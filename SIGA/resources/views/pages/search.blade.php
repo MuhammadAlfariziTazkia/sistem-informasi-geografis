@@ -72,7 +72,7 @@
 
                     <div class="recommend__info">
                         <p class="recommend__header">{{ $item->nama }}</p>
-                        <p>Jarak - Km</p>
+                        <p id="jarak{{$item->id}}"></p>
                         <div class="recommend__rating">
                             {{ $item->rating }}
 
@@ -102,6 +102,31 @@
 
 @section('footer')
     <script src="{{ asset('js/map.js') }}"></script>
+    <script>
+        function cek (sortValue){
+            var sort = document.getElementById('inputSort');
+            newSort = sortValue;
+            sort.setAttribute('value',newSort);
+            console.log(sort.value)
+            document.getElementById('searchForm').submit();
+        }
+        
+        function cekJarak(lat,leng,x){
+            let destination = L.latLng(lat,leng)
+            let wp2 = new L.Routing.Waypoint(destination);
+            let routeUS = new L.Routing.osrmv1();
+            routeUS.route([wp1,wp2],(err,obj)=>{
+                if(!err){
+                    var jarak = obj[0].summary.totalDistance ;
+                    document.getElementById('jarak'+x).innerHTML = "Jarak " + jarak + " m";
+                }
+            })
+        }
+        
+        s.forEach(x => {
+            cekJarak(x.latitude,x.longitude,x.id)
+        });
+    </script>
     <script>
         // console.log(cekJarak(s[0].latitude,s[0].longitude))
         // s.forEach(data => {
